@@ -1,0 +1,20 @@
+name: Artifact Demo
+
+on: push
+
+jobs:
+  bulid:
+      run-on: ubuntu-latest
+
+    steps:
+    - name: creat file
+    run: |
+      mkdir temp
+      echo "alpha" > temp/alpha.html
+
+      - name: upload artifact
+      uses: action/upload-aftifact@v4
+      with:
+      name: files
+      path: temp/|
+      
